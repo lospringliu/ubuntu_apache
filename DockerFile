@@ -1,5 +1,4 @@
 FROM ubuntu:latest
 MAINTAINER Xinchun Liu <lospringliu@gmail.com>
-RUN apt-get update && apt-get install -y apache2
-EXPOSE 80
-CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+RUN apt-get update && apt-get install -y python3-pip libmysqlclient-dev git tcsh libldap2-dev libsasl2-dev && pip3 install django flask docutils mysqlclient pyldap 
+EXPOSE 8000
